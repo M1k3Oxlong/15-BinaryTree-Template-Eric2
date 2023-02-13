@@ -21,8 +21,11 @@ public class MainController {
      */
     private void createMorseTree(){
         //TODO 02: Vervollständige den Morsebaum. Such bei google nach "morsecode as tree" als Vorlage. Das hilft, die Übersicht zu wahren.
-        BinaryTree<String> left = new BinaryTree<>("E");
+        BinaryTree<String> left = new BinaryTree<>("E", new BinaryTree<>("I", new BinaryTree<>("S", new BinaryTree<>("H"), new BinaryTree<>("V")), new BinaryTree<>("U", new BinaryTree<>("F"), new BinaryTree<>(""))), new BinaryTree<>("A", new BinaryTree<>("R", new BinaryTree<>("L"), new BinaryTree<>("")), new BinaryTree<>("W", new BinaryTree<>("P"), new BinaryTree<>("J"))));
+
         BinaryTree<String> right = new BinaryTree<>("T");
+
+
 
         binaryTree.setLeftTree(left);
         binaryTree.setRightTree(right);
