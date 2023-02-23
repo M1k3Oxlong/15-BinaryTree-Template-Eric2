@@ -70,7 +70,7 @@ public class MainController {
         //Der Baum wird in der Mitte des Panels beginnend gezeichnet: x = panel.getWidth()/2
         //Der linke und rechte Knoten in Tiefe 1 sind jeweils ein Viertel der Breite des Panels entfernt: spaceToTheSide = panel.getWidth()/4
         showTree(binaryTree, panel, panel.getWidth()/2, 50, panel.getWidth()/4);
-		
+
 	//Aufruf fordert das Panel zur Aktualisierung auf.
 	panel.repaint();
     }
@@ -87,7 +87,7 @@ public class MainController {
      */
     private void showTree(BinaryTree tree, DrawingPanel panel, double startX, double startY, double spaceToTheSide) {
         //TODO 03: Vervollständige diese Methode. Aktuell wird nur der Wurzelknoten gezeichnet.
-        if (!tree.isEmpty()) {
+        /*if (!tree.isEmpty()) {
             TreeNode node = new TreeNode(startX, startY, 10, tree.getContent().toString(), false);
             TreeNode eNode = new TreeNode(startX - spaceToTheSide, startY + 50, 10, tree.getLeftTree().getContent().toString(), false);
                 TreeNode iNode = new TreeNode(startX - spaceToTheSide*1.5, startY + 100, 10, tree.getLeftTree().getLeftTree().getContent().toString(), false);
@@ -153,9 +153,22 @@ public class MainController {
                             panel.addObject(nodeO1);
                             panel.addObject(nodeO2);
         }
-		
-		
-		
+		*/
+        //TODO 03: Vervollständige diese Methode. Aktuell wird nur der Wurzelknoten gezeichnet.
+        if (!tree.isEmpty()) {
+            TreeNode node = new TreeNode(startX, startY, 10, tree.getContent().toString(), false);
+            panel.addObject(node);
+            if(tree.getLeftTree() != null){
+                TreePath pathLeft = new TreePath(startX,startY+15,startX-spaceToTheSide/1.2,startY+40,2,false);
+                panel.addObject(pathLeft);
+                showTree(tree.getLeftTree(),panel,startX-spaceToTheSide/1.2,startY+60,spaceToTheSide/1.95);
+            }
+            if(tree.getRightTree() != null){
+                TreePath pathRight = new TreePath(startX,startY+15,startX+spaceToTheSide/1.2,startY+40,2,false);
+                panel.addObject(pathRight);
+                showTree(tree.getRightTree(),panel,startX+spaceToTheSide/1.2,startY+60,spaceToTheSide/1.95);
+            }
+        }
     }
 
     /**
@@ -174,7 +187,17 @@ public class MainController {
      */
     private String traverse(BinaryTree tree){
         //TODO 04: Nachdem wir geklärt haben, was eine Traversierung ist, muss diese Methode noch vervollständigt werden. Sollte ein Kinderspiel sein.
-        return "Traverse? Wat dat denn?";
+        String a = "";
+        String b = "";
+        String c;
+        if (!tree.getLeftTree().isEmpty()){
+            a = traverse(tree.getLeftTree()) + ", ";
+        }
+        if (!tree.getRightTree().isEmpty()){
+            b = traverse(tree.getRightTree()) + ", ";
+        }
+        c = tree.getContent().toString();
+        return a + b + c;
     }
 	
     /**
