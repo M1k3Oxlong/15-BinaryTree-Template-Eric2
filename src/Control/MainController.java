@@ -5,6 +5,8 @@ import View.DrawingPanel;
 import View.TreeView.TreeNode;
 import View.TreeView.TreePath;
 
+import java.util.StringTokenizer;
+
 /**
  * Created by Jean-Pierre on 12.01.2017.
  */
@@ -187,23 +189,44 @@ public class MainController {
      */
     private String traverse(BinaryTree tree){
         //TODO 04: Nachdem wir geklärt haben, was eine Traversierung ist, muss diese Methode noch vervollständigt werden. Sollte ein Kinderspiel sein.
-        String a = "";
-        String b = "";
-        String c;
+        //Post Order
+        String left = "";
+        String right = "";
+        String root;
         if (!tree.getLeftTree().isEmpty()){
-            a = traverse(tree.getLeftTree()) + ", ";
+            left = traverse(tree.getLeftTree()) + ", ";
         }
         if (!tree.getRightTree().isEmpty()){
-            b = traverse(tree.getRightTree()) + ", ";
+            right = traverse(tree.getRightTree()) + ", ";
         }
-        c = tree.getContent().toString();
-        return a + b + c;
+        root = tree.getContent().toString();
+        return left + right + root;
+
+        //PreOrder
+        /*root = tree.getContent().toString();
+        if (!tree.getLeftTree().isEmpty()){
+            left = traverse(tree.getLeftTree()) + ", ";
+        }
+        if (!tree.getRightTree().isEmpty()){
+            right = traverse(tree.getRightTree()) + ", ";
+        }
+        return root + left + right;*/
+        
+        //InOrder
+        /*if (!tree.getLeftTree().isEmpty()){
+            left = traverse(tree.getLeftTree()) + ", ";
+        }
+        root = tree.getContent().toString();
+        if (!tree.getRightTree().isEmpty()){
+            right = traverse(tree.getRightTree()) + ", ";
+        }
+        return left + root + right;*/
     }
 	
     /**
      * Interne Übungsmethode zur Traversierung.
      * @param tree Der zu traversierende Binärbaum.
-     * @return Die Anzahl der Knoten in diesem Baum
+     * @return Die Anzahl der Knoten in diesem Baum a
      */
     private int countNodes(BinaryTree tree){
         //TODO 05: Übungsmethode
