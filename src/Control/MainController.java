@@ -89,74 +89,6 @@ public class MainController {
      */
     private void showTree(BinaryTree tree, DrawingPanel panel, double startX, double startY, double spaceToTheSide) {
         //TODO 03: Vervollständige diese Methode. Aktuell wird nur der Wurzelknoten gezeichnet.
-        /*if (!tree.isEmpty()) {
-            TreeNode node = new TreeNode(startX, startY, 10, tree.getContent().toString(), false);
-            TreeNode eNode = new TreeNode(startX - spaceToTheSide, startY + 50, 10, tree.getLeftTree().getContent().toString(), false);
-                TreeNode iNode = new TreeNode(startX - spaceToTheSide*1.5, startY + 100, 10, tree.getLeftTree().getLeftTree().getContent().toString(), false);
-                    TreeNode sNode = new TreeNode(startX - spaceToTheSide*1.66, startY + 150, 10, tree.getLeftTree().getLeftTree().getLeftTree().getContent().toString(), false);
-                        TreeNode hNode = new TreeNode(startX - spaceToTheSide * 1.75, startY + 200, 10, tree.getLeftTree().getLeftTree().getLeftTree().getLeftTree().getContent().toString(), false);
-                        TreeNode vNode = new TreeNode(startX - spaceToTheSide * 1.58, startY + 200, 10, tree.getLeftTree().getLeftTree().getLeftTree().getRightTree().getContent().toString(), false);
-                    TreeNode uNode = new TreeNode(startX - spaceToTheSide*1.33, startY + 150, 10, tree.getLeftTree().getLeftTree().getRightTree().getContent().toString(), false);
-                        TreeNode fNode = new TreeNode(startX - spaceToTheSide*1.41, startY +200, 10, tree.getLeftTree().getLeftTree().getRightTree().getLeftTree().getContent().toString(), false);
-                        TreeNode nodeU = new TreeNode(startX - spaceToTheSide*1.25, startY + 200, 10, tree.getLeftTree().getLeftTree().getRightTree().getRightTree().getContent().toString(), false);
-                TreeNode aNode = new TreeNode(startX - spaceToTheSide*0.5, startY + 100, 10, tree.getLeftTree().getRightTree().getContent().toString(), false);
-                    TreeNode rNode = new TreeNode(startX - spaceToTheSide*0.66, startY + 150, 10, tree.getLeftTree().getRightTree().getLeftTree().getContent().toString(), false);
-                        TreeNode lNode = new TreeNode(startX - spaceToTheSide*0.75, startY + 200, 10, tree.getLeftTree().getRightTree().getLeftTree().getLeftTree().getContent().toString(), false);
-                        TreeNode nodeR = new TreeNode(startX - spaceToTheSide*0.58, startY + 200, 10, tree.getLeftTree().getRightTree().getLeftTree().getRightTree().getContent().toString(), false);
-                    TreeNode wNode = new TreeNode(startX - spaceToTheSide*0.33, startY + 150, 10, tree.getLeftTree().getRightTree().getRightTree().getContent().toString(), false);
-                        TreeNode pNode = new TreeNode(startX - spaceToTheSide*0.41, startY + 200, 10, tree.getLeftTree().getRightTree().getRightTree().getLeftTree().getContent().toString(), false);
-                        TreeNode jNode = new TreeNode(startX - spaceToTheSide*0.25, startY + 200, 10, tree.getLeftTree().getRightTree().getRightTree().getRightTree().getContent().toString(), false);
-            TreeNode tNode = new TreeNode(startX + spaceToTheSide, startY + 15, 10, tree.getRightTree().getContent().toString(), false);
-                TreeNode nNode = new TreeNode(startX + spaceToTheSide*0.5, startY + 100, 10, tree.getRightTree().getLeftTree().getContent().toString(), false);
-                    TreeNode dNode = new TreeNode(startX + spaceToTheSide*0.33, startY + 150, 10, tree.getRightTree().getLeftTree().getLeftTree().getContent().toString(), false);
-                        TreeNode bNode = new TreeNode(startX + spaceToTheSide * 0.25, startY + 200, 10, tree.getRightTree().getLeftTree().getLeftTree().getLeftTree().getContent().toString(), false);
-                        TreeNode xNode = new TreeNode(startX + spaceToTheSide * 0.41, startY + 200, 10, tree.getRightTree().getLeftTree().getLeftTree().getRightTree().getContent().toString(), false);
-                    TreeNode kNode = new TreeNode(startX + spaceToTheSide*0.66, startY + 150, 10, tree.getRightTree().getLeftTree().getRightTree().getContent().toString(), false);
-                        TreeNode cNode = new TreeNode(startX + spaceToTheSide*0.58, startY +200, 10, tree.getRightTree().getLeftTree().getRightTree().getLeftTree().getContent().toString(), false);
-                        TreeNode yNode = new TreeNode(startX + spaceToTheSide*0.75, startY + 200, 10, tree.getRightTree().getLeftTree().getRightTree().getRightTree().getContent().toString(), false);
-                TreeNode mNode = new TreeNode(startX + spaceToTheSide*1.5, startY + 100, 10, tree.getRightTree().getRightTree().getContent().toString(), false);
-                    TreeNode gNode = new TreeNode(startX + spaceToTheSide*1.33, startY + 150, 10, tree.getRightTree().getRightTree().getLeftTree().getContent().toString(), false);
-                        TreeNode zNode = new TreeNode(startX + spaceToTheSide*1.25, startY + 200, 10, tree.getRightTree().getRightTree().getLeftTree().getLeftTree().getContent().toString(), false);
-                        TreeNode qNode = new TreeNode(startX + spaceToTheSide*1.41, startY + 200, 10, tree.getRightTree().getRightTree().getLeftTree().getRightTree().getContent().toString(), false);
-                    TreeNode oNode = new TreeNode(startX + spaceToTheSide*1.66, startY + 150, 10, tree.getRightTree().getRightTree().getRightTree().getContent().toString(), false);
-                        TreeNode nodeO1 = new TreeNode(startX + spaceToTheSide*1.58, startY + 200, 10, tree.getRightTree().getRightTree().getRightTree().getLeftTree().getContent().toString(), false);
-                        TreeNode nodeO2 = new TreeNode(startX + spaceToTheSide*1.75, startY + 200, 10, tree.getRightTree().getRightTree().getRightTree().getRightTree().getContent().toString(), false);
-
-
-            panel.addObject(node);
-                panel.addObject(eNode);
-                panel.addObject(iNode);
-                    panel.addObject(sNode);
-                        panel.addObject(hNode);
-                        panel.addObject(vNode);
-                    panel.addObject(uNode);
-                        panel.addObject(fNode);
-                        panel.addObject(nodeU);
-                panel.addObject(aNode);
-                    panel.addObject(rNode);
-                        panel.addObject(lNode);
-                        panel.addObject(nodeR);
-                    panel.addObject(wNode);
-                        panel.addObject(pNode);
-                        panel.addObject(jNode);
-                panel.addObject(tNode);
-                    panel.addObject(nNode);
-                        panel.addObject(dNode);
-                            panel.addObject(bNode);
-                            panel.addObject(xNode);
-                        panel.addObject(kNode);
-                            panel.addObject(cNode);
-                            panel.addObject(yNode);
-                    panel.addObject(mNode);
-                        panel.addObject(gNode);
-                            panel.addObject(zNode);
-                            panel.addObject(qNode);
-                        panel.addObject(oNode);
-                            panel.addObject(nodeO1);
-                            panel.addObject(nodeO2);
-        }
-		*/
-        //TODO 03: Vervollständige diese Methode. Aktuell wird nur der Wurzelknoten gezeichnet.
         if (!tree.isEmpty()) {
             TreeNode node = new TreeNode(startX, startY, 10, tree.getContent().toString(), false);
             panel.addObject(node);
@@ -189,38 +121,18 @@ public class MainController {
      */
     private String traverse(BinaryTree tree){
         //TODO 04: Nachdem wir geklärt haben, was eine Traversierung ist, muss diese Methode noch vervollständigt werden. Sollte ein Kinderspiel sein.
-        //Post Order
-        String left = "";
-        String right = "";
-        String root;
-        if (!tree.getLeftTree().isEmpty()){
-            left = traverse(tree.getLeftTree()) + ", ";
-        }
-        if (!tree.getRightTree().isEmpty()){
-            right = traverse(tree.getRightTree()) + ", ";
-        }
-        root = tree.getContent().toString();
-        return left + right + root;
+        String l = "";
+        String r = "";
 
-        //PreOrder
-        /*root = tree.getContent().toString();
         if (!tree.getLeftTree().isEmpty()){
-            left = traverse(tree.getLeftTree()) + ", ";
+            l = traverse(tree.getLeftTree());
         }
         if (!tree.getRightTree().isEmpty()){
-            right = traverse(tree.getRightTree()) + ", ";
+            r = traverse(tree.getRightTree());
         }
-        return root + left + right;*/
-        
-        //InOrder
-        /*if (!tree.getLeftTree().isEmpty()){
-            left = traverse(tree.getLeftTree()) + ", ";
-        }
-        root = tree.getContent().toString();
-        if (!tree.getRightTree().isEmpty()){
-            right = traverse(tree.getRightTree()) + ", ";
-        }
-        return left + root + right;*/
+
+        return l + tree.getContent().toString() + r;
+
     }
 	
     /**
